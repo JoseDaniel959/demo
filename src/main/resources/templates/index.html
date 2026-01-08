@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>Personal Blog</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+  
+    <H1>Welcome my Blog Website</H1>
+    <p>
+       On this page you can see articles related to Java, software engineering, AWS, React. Check
+        out the articles below.
+    </p>
+    
+    <ol>
+      <div data-th-each="title:${listOfTitles}">
+        <li data-th-text="${title}"></li>
+      </div>
+        
+        
+    </ol>
+  </body>
+
+</html>
