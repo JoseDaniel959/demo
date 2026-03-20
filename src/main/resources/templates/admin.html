@@ -2,29 +2,30 @@
 
 <html>
 
-  <head>
-    <title>Admin</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <script th:src="@{/admin.js}" defer></script>    
-    </head>
+<head>
+  <title>Admin</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <script th:src="@{/admin.js}" defer></script>
+  <link rel="stylesheet" type="text/css" media="all" data-th-href="@{/styles/main.css}" />
+</head>
 
-  <body>
-    
-    <h1>Personal Blog</h1> 
-    <form id="formEdit">
-    </form>
+<body class="caveat ">
+
+  <h1>Personal Blog</h1>
+  <form id="formEdit">
+  </form>
 
 
-    <ol>
-    <li data-th-each="article : ${articles}"  data-th-id="${article.blogID}">
-        <span data-th-text="${article.title}"></span>
-        <button form="formEdit" formaction="http://localhost:8080/admin/">Edit</button>
-        <button class="delete">Delete</button>    
+  <ol>
+    <li data-th-each="article : ${articles}" data-th-id="${article.blogID}">
+      <span data-th-text="${article.title}"></span>
+      <button form="formEdit" formaction="http://localhost:8080/admin/">Edit</button>
+      <button class="delete">Delete</button>
     </li>
 
-             
-    </ol>
-  
-  </body>
+
+  </ol>
+
+</body>
 
 </html>

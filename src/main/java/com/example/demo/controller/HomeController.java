@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.example.demo.model.Blog;
 import com.example.demo.services.BlogServices;
 
 @Controller
@@ -17,8 +18,9 @@ public class HomeController {
 
     @GetMapping("/")
     public String welcomePage(Model model){
-        List<String> articleTitles = blogServices.articleTitles();
-        model.addAttribute("listOfTitles", articleTitles);
+        List<Blog> blogs = blogServices.getBlogs();
+        System.out.println(blogs);
+        model.addAttribute("blogs", blogs);
         return "index";
     }
 

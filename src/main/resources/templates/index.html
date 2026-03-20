@@ -5,19 +5,27 @@
   <head>
     <title>Personal Blog</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" 
+         data-th-href="@{/styles/main.css}" />
+         
   </head>
 
   <body>
   
-    <H1>Welcome my Blog Website</H1>
+    <h1>Community Software Blogs</h1>
     <p>
-       On this page you can see articles related to Java, software engineering, AWS, React. Check
-        out the articles below.
+      Welcome to this page. This page is intended for software developers to read and publish blogs related to Software engineering. 
+      It does not matter what kind of programming language you use or whether you work as a DevOps or a Data scientist, everybody is welcome to publish their own experiences =).
+      If you want to know how to publish an article in this website, please check the information section.
     </p>
     
     <ol>
-      <div data-th-each="title:${listOfTitles}">
-        <li data-th-text="${title}"></li>
+      <div data-th-each="blogs:${blogs}">
+        <h4>
+          <a data-th-href="@{http://localhost:8080/article/{blogID}(blogID=${blogs.blogID})}">
+            <li data-th-text="${blogs.title}"></li>
+          </a>
+        </h4>
       </div>
         
         
