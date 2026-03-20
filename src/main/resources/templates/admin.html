@@ -11,16 +11,36 @@
 
 <body class="caveat ">
 
-  <h1>Personal Blog</h1>
+  <header style="
+    display: flex;
+    width: 60%;
+    justify-content: space-evenly;
+    align-items: center;
+    ">
+    <h1>
+      Admin Panel
+    </h1>
+    <button
+      class="Button"
+    >+ add
+    </button>
+  </header>
+
+
   <form id="formEdit">
   </form>
 
 
   <ol>
-    <li data-th-each="article : ${articles}" data-th-id="${article.blogID}">
-      <span data-th-text="${article.title}"></span>
-      <button form="formEdit" formaction="http://localhost:8080/admin/">Edit</button>
-      <button class="delete">Delete</button>
+    <li 
+    data-th-each="article : ${articles}" data-th-id="${article.blogID}">
+      <p 
+        style="
+        display: inline-block;
+        width: 30em ;"
+      data-th-text="${article.title}"></p>
+      <button class="Button" form="formEdit" formaction="http://localhost:8080/admin/">Edit</button>
+      <button class="delete Button">Delete</button>
     </li>
 
 
